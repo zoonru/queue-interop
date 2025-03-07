@@ -109,7 +109,7 @@ interface Message
      * A client can use the correlation header field to link one message with another.
      * A typical use is to link a response message with its request message.
      */
-    public function setCorrelationId(string $correlationId = null): void;
+    public function setCorrelationId(?string $correlationId = null): void;
 
     /**
      * Gets the correlation ID for the message.
@@ -123,7 +123,7 @@ interface Message
      * Providers set this field when a message is sent.
      * This method can be used to change the value for a message that has been received.
      */
-    public function setMessageId(string $messageId = null): void;
+    public function setMessageId(?string $messageId = null): void;
 
     /**
      * Gets the message Id.
@@ -146,7 +146,7 @@ interface Message
      * Providers set this field when a message is sent.
      * This method can be used to change the value for a message that has been received.
      */
-    public function setTimestamp(int $timestamp = null): void;
+    public function setTimestamp(?int $timestamp = null): void;
 
     /**
      * Sets the destination to which a reply to this message should be sent.
@@ -160,7 +160,7 @@ interface Message
      * The client can use the CorrelationID header field for this purpose.
 
      */
-    public function setReplyTo(string $replyTo = null): void;
+    public function setReplyTo(?string $replyTo = null): void;
 
     /**
      * Gets the destination to which a reply to this message should be sent.

@@ -26,7 +26,7 @@ interface Producer
      *
      * @throws DeliveryDelayNotSupportedException if producer does not support delivery delay feature
      */
-    public function setDeliveryDelay(int $deliveryDelay = null): self;
+    public function setDeliveryDelay(?int $deliveryDelay = null): self;
 
     /**
      * Gets the minimum length of time in milliseconds that must elapse after a message is sent before the provider may deliver the message to a consumer.
@@ -45,7 +45,7 @@ interface Producer
      *
      * @throws PriorityNotSupportedException if producer does not support priority feature
      */
-    public function setPriority(int $priority = null): self;
+    public function setPriority(?int $priority = null): self;
 
     /**
      * Return the priority of messages that are sent using this Producer
@@ -65,7 +65,7 @@ interface Producer
      *
      * @throws TimeToLiveNotSupportedException if producer does not support time to live feature
      */
-    public function setTimeToLive(int $timeToLive = null): self;
+    public function setTimeToLive(?int $timeToLive = null): self;
 
     /**
      * Returns the time to live of messages that are sent using this JMSProducer.

@@ -11,7 +11,7 @@ class TimeToLiveNotSupportedException extends Exception
      *
      * @return static
      */
-    public static function providerDoestNotSupportIt(int $code = 0, \Throwable $previous = null): self
+    public static function providerDoestNotSupportIt(int $code = 0, ?\Throwable $previous = null): self
     {
         return new static('The provider does not support time to live feature', $code, $previous);
     }

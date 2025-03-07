@@ -97,7 +97,7 @@ trait MessageTrait
         return $this->redelivered;
     }
 
-    public function setCorrelationId(string $correlationId = null): void
+    public function setCorrelationId(?string $correlationId = null): void
     {
         $this->setHeader('correlation_id', $correlationId);
     }
@@ -107,7 +107,7 @@ trait MessageTrait
         return $this->getHeader('correlation_id');
     }
 
-    public function setMessageId(string $messageId = null): void
+    public function setMessageId(?string $messageId = null): void
     {
         $this->setHeader('message_id', $messageId);
     }
@@ -124,12 +124,12 @@ trait MessageTrait
         return null === $value ? null : (int) $value;
     }
 
-    public function setTimestamp(int $timestamp = null): void
+    public function setTimestamp(?int $timestamp = null): void
     {
         $this->setHeader('timestamp', $timestamp);
     }
 
-    public function setReplyTo(string $replyTo = null): void
+    public function setReplyTo(?string $replyTo = null): void
     {
         $this->setHeader('reply_to', $replyTo);
     }

@@ -16,6 +16,7 @@ class InvalidMessageException extends Exception
      * @psalm-assert TClass $message
      *
      * @throws static
+     * @psalm-pure
      */
     public static function assertMessageInstanceOf(Message $message, string $class): void
     {

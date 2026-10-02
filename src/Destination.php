@@ -14,6 +14,7 @@ namespace Interop\Queue;
  * it may contain provider-specific configuration information in addition to its address.
  *
  * @see https://docs.oracle.com/javaee/7/api/javax/jms/Destination.html
+ * @psalm-mutable
  */
 interface Destination
 {

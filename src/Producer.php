@@ -10,6 +10,7 @@ use Interop\Queue\Exception\PriorityNotSupportedException;
 use Interop\Queue\Exception\TimeToLiveNotSupportedException;
 
 /**
+ * @psalm-purity-template P
  * @psalm-mutable
  */
 interface Producer
@@ -18,7 +19,8 @@ interface Producer
      * @throws Exception                   if the provider fails to send the message due to some internal error
      * @throws InvalidDestinationException if a client uses this method with an invalid destination
      * @throws InvalidMessageException     if an invalid message is specified
-     * @psalm-impure
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function send(Destination $destination, Message $message): void;
 

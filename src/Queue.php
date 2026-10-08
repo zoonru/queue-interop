@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Interop\Queue;
 
 /**
- * @psalm-mutable
+ * @psalm-capabilities read-props|write-this-props|write-refs
  */
 interface Queue extends Destination
 {

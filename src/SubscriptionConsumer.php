@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Interop\Queue;
 
 /**
+ * @psalm-purity-template P
  * @psalm-mutable
  */
 interface SubscriptionConsumer
@@ -11,7 +12,8 @@ interface SubscriptionConsumer
     /**
      * The timeout is in milliseconds.
      * Set zero to consume endlessly or till a consumer returns false.
-     * @psalm-impure
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function consume(int $timeout = 0): void;
 
@@ -23,17 +25,20 @@ interface SubscriptionConsumer
      * and an optional second parameter the \Interop\Queue\Consumer from which the message was
      * consumed. The consumer will not return the processing thread back to
      * the PHP script until the callback function returns FALSE.
-     * @psalm-impure
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function subscribe(Consumer $consumer, callable $callback): void;
 
     /**
-     * @psalm-impure
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function unsubscribe(Consumer $consumer): void;
 
     /**
-     * @psalm-impure
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function unsubscribeAll(): void;
 }

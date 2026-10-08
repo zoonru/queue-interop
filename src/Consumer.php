@@ -9,6 +9,7 @@ namespace Interop\Queue;
  * to a message-consumer creation method supplied by a session.
  *
  * @see https://docs.oracle.com/javaee/7/api/javax/jms/MessageConsumer.html
+ * @psalm-purity-template P
  * @psalm-mutable
  */
 interface Consumer
@@ -25,13 +26,15 @@ interface Consumer
      * A timeout of zero never expires, and the call blocks indefinitely.
      *
      * Timeout is in milliseconds
-     * @psalm-impure
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function receive(int $timeout = 0): ?Message;
 
     /**
      * Receives the next message if one is immediately available.
-     * @psalm-impure
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function receiveNoWait(): ?Message;
 
@@ -43,7 +46,8 @@ interface Consumer
 
     /**
      * Tell the MQ broker that the message was rejected.
-     * @psalm-impure
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function reject(Message $message, bool $requeue = false): void;
 }

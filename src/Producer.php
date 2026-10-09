@@ -11,7 +11,6 @@ use Interop\Queue\Exception\TimeToLiveNotSupportedException;
 
 /**
  * @psalm-purity-template P
- * @psalm-mutable
  */
 interface Producer
 {

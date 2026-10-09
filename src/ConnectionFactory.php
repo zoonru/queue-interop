@@ -5,7 +5,6 @@ namespace Interop\Queue;
 
 /**
  * @psalm-purity-template P <= read-globals|write-globals
- * @psalm-capabilities read-props|write-this-props|read-globals|write-globals|io
  */
 interface ConnectionFactory
 {

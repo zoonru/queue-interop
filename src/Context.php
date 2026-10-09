@@ -9,7 +9,6 @@ use Interop\Queue\Exception\TemporaryQueueNotSupportedException;
 
 /**
  * @psalm-purity-template P
- * @psalm-mutable
  */
 interface Context
 {

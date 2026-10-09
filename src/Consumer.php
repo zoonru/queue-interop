@@ -10,7 +10,6 @@ namespace Interop\Queue;
  *
  * @see https://docs.oracle.com/javaee/7/api/javax/jms/MessageConsumer.html
  * @psalm-purity-template P
- * @psalm-mutable
  */
 interface Consumer
 {

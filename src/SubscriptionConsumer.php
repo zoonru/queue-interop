@@ -5,7 +5,6 @@ namespace Interop\Queue;
 
 /**
  * @psalm-purity-template P
- * @psalm-mutable
  */
 interface SubscriptionConsumer
 {

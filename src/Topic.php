@@ -9,7 +9,7 @@ namespace Interop\Queue;
  * For those methods that use a Destination as a parameter, a Topic object may used as an argument.
  *
  * @see https://docs.oracle.com/javaee/7/api/javax/jms/Topic.html
- * @psalm-mutable
+ * @psalm-capabilities read-props|write-this-props|write-refs
  */
 interface Topic extends Destination
 {

@@ -8,7 +8,7 @@ use Interop\Queue\Exception\SubscriptionConsumerNotSupportedException;
 use Interop\Queue\Exception\TemporaryQueueNotSupportedException;
 
 /**
- * @psalm-mutable
+ * @psalm-purity-template P
  */
 interface Context
 {
@@ -44,12 +44,14 @@ interface Context
     public function createTemporaryQueue(): Queue;
 
     /**
-     * @psalm-impure
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function createProducer(): Producer;
 
     /**
-     * @psalm-impure
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function createConsumer(Destination $destination): Consumer;
 
@@ -66,7 +68,8 @@ interface Context
     public function purgeQueue(Queue $queue): void;
 
     /**
-     * @psalm-impure
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function close(): void;
 }

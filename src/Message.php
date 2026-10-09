@@ -13,7 +13,7 @@ namespace Interop\Queue;
  * Within this general form, the definition of a message varies significantly across products.
  *
  * @see https://docs.oracle.com/javaee/7/api/javax/jms/Message.html
- * @psalm-mutable
+ * @psalm-capabilities read-props|write-this-props|read-globals|write-refs
  */
 interface Message
 {
